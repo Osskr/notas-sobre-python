@@ -1,3 +1,4 @@
+import persona
 dato = int(input("ingrese un valor: "))
 
 print(dato)
@@ -33,3 +34,11 @@ saludo(dato)
 tupla = ('A','B','C','D')
 
 print(tupla)
+
+yo = persona.Persona('osskr', 29, 'Argentino')
+
+yo.saludar() 
+
+archivo = open('file.txt','a')
+archivo.write('escribo una linea en el archivo')
+archivo.close()

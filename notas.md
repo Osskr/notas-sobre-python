@@ -1,6 +1,6 @@
 # Notas para python
 
-Este archivo contiene las notas para lo que vaya aprendiendo de python, no es algo formal sino mas bien una forma de recordar rapido algunos conceptos.
+Este repositorio contiene las notas para lo que vaya aprendiendo de python, no es algo formal sino mas bien una forma de recordar rapido algunos conceptos.
 
 ## Obtener datos por consola
 
@@ -423,4 +423,88 @@ spam.setdefault('color', 'white')
 
 spam
 >>>{'color': 'black', 'age': 5, 'name': 'Pooka'}
+```
+
+## Programacion Orientada a Objetos
+
+### Clases
+
+Para definir una clase en python utilizamos la palabra reservada *class( )*
+
+```python
+class Persona:
+    nombre =""
+    edad = 0
+    nacionalidad = ""
+
+    def __init__(self,nombre,edad,nacionalidad):
+        self.nombre = nombre
+        self.edad = edad
+        self.nacionalidad = nacionalidad
+
+
+    def saludar(self):
+        print("hola mi nombre es ", self.nombre)
+ ```
+
+Con  _init( )_  definimos el construcctor de una clase
+
+## Archivos
+
+Hay tres pasos a seguir para el trabajo con archivos en python
+
+1. llamar a la funcion *open()* para que nos devuelva un objeto del tipo *File*
+
+2. llamar al metodo *read()* or *write()* en el objeto *File* creado
+
+3. Cerrar el archivo invocando al metodo *close( )* del objeto *File*
+
+tenemos 3 modos para abrir los archivos:
+
+* *'r'* : abre el archivo en modo de solo lectura.
+* *'w'* : abre el archivo en modo escritura, si no existe lo crea en la ruta especificada en open y si existe lo sobreescribe.
+* *'a'* : abre el archivo en modo de escritura pero si este existe no lo sobreescribe.
+
+### Abrir un Archivo
+
+para abrir un archivo hacemos lo siguiente:
+
+```python
+miArchivo = open('ruta del archivo','r')
+```
+
+con el parametro *'r'*  de la funcion open estamos indicando el modo en el que queremos abrir el archivo
+
+### Crear un Archivo y sobreescribir su contenido
+
+para abrir un archivo hacemos lo siguiente:
+
+```python
+miArchivo = open('ruta del archivo','w')
+```
+
+### Abrir archivo existente en modo de escritura sin sobreescribir
+
+para abrir un archivo existente al cual le queremos seguir agregando lineas sin que sea sobreescrito hacemos lo siguiente:
+
+```python
+miArchivo = open('ruta del archivo','a')
+```
+
+### Cerrar archivos
+
+Siempre que abrimos un archivo y luego de que terminemos de trabajar con el debemos cerrarlo, para esto llamamos al metodo *close()*
+
+```python
+miArchivo.close()
+```
+
+### Escribir en un archivo
+
+Para escribir en un archivo primero abrimos el archivo en modo *'a' (append)* y luego llamamos al metodo *write( )* para agregar lineas al final del archivo
+
+```python
+miArchivo = open('mi archivo en disco.txt'.'a')
+miArchivo.write('Agregamos una linea al archivo')
+miArchivo.close()
 ```
